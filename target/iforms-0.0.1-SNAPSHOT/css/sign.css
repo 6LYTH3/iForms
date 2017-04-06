@@ -1,0 +1,70 @@
+/* Override form base.css */
+.card-heading {
+  display: block;
+  margin-top: 24px;
+  padding-left: 100px;
+}
+
+.card-side {
+  background-color: #f5f5f5;
+  border-radius: 2px 0 0 2px;
+  max-width: 50%;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.margin-bottom-lg {
+    margin-bottom: 33px!important;
+}
+
+.img-ot {
+  position: relative;
+  z-index: 100 !important;; /* Alway on front */
+}
+
+/* My style */
+.header-x {
+  background:#66cc9a;
+  background:-moz-linear-gradient(315deg,rgba(255,194,0,0.3) 0%,rgba(80,212,220,0.3) 100%) repeat 0% 0%,url("images/white_grid.png") repeat 0% 0% transparent;
+  background:-webkit-gradient(linear,left top,right bottom,color-stop(0%,rgba(255,194,0,0.3)),color-stop(100%,rgba(80,212,220,0.3))) repeat 0% 0%,url("images/white_grid.png") repeat 0% 0% transparent;
+  background:-webkit-linear-gradient(315deg,rgba(255,194,0,0.3) 0%,rgba(80,212,220,0.3) 100%) url("images/white_grid.png") repeat 0% 0%,url("images/white_grid.png") repeat 0% 0% transparent;
+  background:-o-linear-gradient(315deg,rgba(255,194,0,0.3) 0%,rgba(80,212,220,0.3) 100%) repeat 0% 0%,url("images/white_grid.png") repeat 0% 0% transparent;
+  background:-ms-linear-gradient(315deg,rgba(255,194,0,0.3) 0%,rgba(80,212,220,0.3) 100%) repeat 0% 0%,url("images/white_grid.png") repeat 0% 0% transparent;
+  background:linear-gradient(315deg,rgba(255,194,0,0.3),rgba(80,212,220,0.3) 100%) repeat 0% 0%,url("images/white_grid.png") repeat 0% 0% transparent;
+  margin:0 auto;
+  padding:80px 0;
+  width:100%;
+  height:auto;
+}
+
+.btn-sign {
+  padding: 33px 60px;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.header-title {
+  height: 100px;
+}
+
+.title-1 h1 {
+  text-align:center;
+}
+
+.iTime {
+  font-size: 150pt;
+  color: #ffffff;
+}
+
+.input-group-btn  {
+  padding: 50px 40px;
+}
+
+
+
+@media only screen and (max-width: 520px) {
+  .iTime {
+    font-size: 80pt;
+  }
+}

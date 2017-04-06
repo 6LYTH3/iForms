@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 //EN">
+<html lang="en" ng-app="sign">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport">
+	<title>Sign</title>
+	<!-- Latest compiled and minified CSS -->
+	<!-- css -->
+	<link href="css/base.css" rel="stylesheet">
+	<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+	<!-- <link href="css/preview-new.css" rel="stylesheet"> -->
+	<link href="css/sign.css" rel="stylesheet">
+</head>
+<body onload="reload_img()">
+	<div class="content" ng-controller="signCtrl" ng-init="currentuser()">
+		<section class="header-title">
+			<div class="title-1">
+				<h1>ลงเวลาทำงาน</h1>
+			</div>
+		</section>
+
+		<section class="header-x">
+			<div class="container">
+				<section class="content-inner">
+					<div class="row">
+						<div class="col-lg-12 col-sm-12">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img class="img-ot" alt="{{ ur.name }}" src="avatar/{{ ur.gid }}.png" height="100%" width="250" />
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading text-purple">User Information</p>
+										<div class="margin-bottom-lg">
+											<div class="row">
+												<div class="col-lg-2 col-md-3 col-sm-4">
+													<label class="form-label" for="input-name">Name</label>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-8">
+													<input class="form-control form-control-inline" id="input-name" value="{{ ur.name }}" type="text" disabled>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-lg-2 col-md-3 col-sm-4">
+													<label class="form-label" for="input-team">Team</label>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-8">
+													<input class="form-control form-control-inline" id="input-team" value="{{ ur.team }}" type="text" disabled>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-lg-2 col-md-3 col-sm-4">
+													<label class="form-label" for="input-signIn">Sign In</label>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-8">
+													<input class="form-control form-control-inline" id="input-signIn" value="{{ track.signIn | date:'medium' }}" type="text" disabled>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-lg-2 col-md-3 col-sm-4">
+													<label class="form-label" for="input-remark" title="For normal work, Please do not fill remark.">Remark</label>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-8">
+													<input class="form-control form-control-inline" id="input-remark" placeholder="I'm covering for Mr'Blythe who is ill this day" type="text">
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a ng-if="'YES' === ur.otconsent" class="btn btn-yellow waves-attach waves-effect" ng-click="submiOT(track.id)"><span class="text-white">submit ot</span></a>
+											<a ng-if="'NO' === ur.otconsent" class="btn btn-yellow waves-attach waves-effect" href="/SCTTimestamp/history.html"><span class="text-white">Ok</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<p>Made with ❤  by Korat Service Desk</p>
+			<p>Copyright © <script language="JavaScript"> var d = new Date(); yr = d.getFullYear(); document.write(yr); </script></p>
+		</div>
+	</footer>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/base.min.js"></script>
+
+	<!-- js for this project -->
+	<script src="js/project.min.js"></script>
+	<script src='js/angular.min.js'></script>
+	<script src='js/sign.js'></script>
+
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function reload_img() {
+			if (!window.location.hash) {
+				window.location = window.location + '#loaded';
+				window.location.reload();
+			}
+		}
+	</script>
+</body>
+</html>
