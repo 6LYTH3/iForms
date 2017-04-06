@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 //EN">
+<html lang="en" ng-app="history">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport">
+	<title>History</title>
+
+	<!-- css -->
+	<link href="css/base.css" rel="stylesheet">
+
+	<!-- css for this project -->
+	<link href="css/project.min.css" rel="stylesheet">
+
+	<!-- favicon -->
+	<!-- ... -->
+
+	<!-- ie -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<style type="text/css">
+	@media only screen and (min-width: 992px) {
+		.container {
+			max-width: 1172px;
+		}
+	}
+
+	.p-top {
+		padding-top: 12px;
+	}
+
+	.content-inner {
+		margin-top: 15px;
+		margin-bottom: 48px;
+	}
+	</style>
+
+</head>
+<body class="avoid-fout" ng-controller="historyCtrl" ng-init="currentuser()" onload="summarry()">
+	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
+		<div class="progress-circular progress-circular-alt progress-circular-center">
+			<div class="progress-circular-wrapper">
+				<div class="progress-circular-inner">
+					<div class="progress-circular-left">
+						<div class="progress-circular-spinner"></div>
+					</div>
+					<div class="progress-circular-gap"></div>
+					<div class="progress-circular-right">
+						<div class="progress-circular-spinner"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header class="header header-transparent header-waterfall">
+		<ul class="nav nav-list pull-left">
+			<li>
+				<a data-toggle="menu" href="#menu">
+					<span class="icon icon-lg">menu</span>
+				</a>
+			</li>
+		</ul>
+		<a class="header-logo margin-left-no" href="home.html">SCT Time Stamp</a>
+		<span class="header-text margin-left-no">
+			<i class="icon margin-right">chevron_right</i>History
+		</span>
+		<ul class="nav nav-list pull-right">
+			<li>
+				<a data-toggle="menu" href="#profile">
+					<span class="access-hide">{{ ur.name }}</span>
+					<span class="avatar"><img alt="NY" src="avatar/{{ ur.gid }}.png"></span>
+				</a>
+			</li>
+		</ul>
+	</header>
+	<nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-content">
+				<a class="menu-logo" href="home.html">SCT Time Stamp</a>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="sign.html">Sign In/Out</a>
+					</li>
+				</ul>
+				<hr>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="history.html">History</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="list-profile.html">Profile List</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="holiday.html">Holiday</a>
+						<span class="menu-collapse-toggle collapsed" data-target="#calendar-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+						<ul class="menu-collapse collapse" id="calendar-elements">
+							<li>
+								<a class="waves-attach" href="holiday.html">Holiday List</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<hr>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="report.html">Report</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="list-profile.html">Profile</a>
+						<span class="menu-collapse-toggle collapsed" data-target="#profile-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+						<ul class="menu-collapse collapse" id="profile-elements">
+							<li>
+								<a ng-if="'ROLE_ADMIN' === ur.role" class="waves-attach" href="create-profile.html">Crate Profile</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="list-profile.html">Search</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<hr>
+			</div>
+		</div>
+	</nav>
+
+	<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-top">
+				<div class="menu-top-img">
+					<img alt="John Smith" src="css/images/samples/landscape.jpg" />
+				</div>
+				<div class="menu-top-info">
+					<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="NY" src="avatar/{{ ur.gid }}.png"></span>{{ ur.name }}</a>
+				</div>
+				<div class="menu-top-info-sub">
+					<small>{{ ur.email }}</small>
+				</div>
+			</div>
+			<div class="menu-content">
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="/SCTTimestamp/edit-profile.html?gid={{ ur.gid }}"><span class="icon icon-lg">account_box</span>Profile Settings</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="password.html"><span class="icon icon-lg">https</span>Change Password</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="history.html"><span class="icon icon-lg">add_to_photos</span>History</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="logout"><span class="icon icon-lg">exit_to_app</span>Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="content">
+		<div class="content-heading">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+						<!-- <h1 class="heading">SCT Time Stamp</h1> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-2">
+					<label class="form-label" for="datepicker-adv-1">Eff.Date From</label>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-2">
+					<input ng-model='date_from' class="datepicker-adv datepicker-adv-doc-2 form-control picker__input" id="datepicker-adv-1" type="text" readonly="" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="datepicker-adv-1_root">
+				</div>
+
+				<div class="col-lg-1 col-md-1 col-sm-1">
+					<label class="form-label" for="datepicker-adv-2">To</label>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-2">
+					<input ng-model='date_to' class="datepicker-adv datepicker-adv-doc-2 form-control picker__input" id="datepicker-adv-2" type="text" readonly="" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="datepicker-adv-2_root">
+				</div>
+				<p class="margin-top-no"><a ng-click='getHistory()' class="btn btn-blue waves-attach waves-button waves-light waves-effect">Get History</a></p>
+			</div>
+			<div class="row p-top">
+				<div class="col-lg-5 col-lg-push-3 col-sm-5 col-sm-push-3">
+					<div class="media">
+						<div class="media-object pull-left">
+							<label class="form-icon-label" for="input-search"><span class="icon">search</span></label>
+						</div>
+						<div class="media-inner">
+							<input class="form-control" onkeyup="summarry()" id="input-search" placeholder="Filter: Gid or Name" type="text" ng-model='text'>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-lg-push-0 col-sm-12 col-sm-push-0">
+					<section class="content-inner">
+						<div class="table-responsive">
+							<table class="table" title="History of Tracking">
+								<thead>
+									<tr>
+										<th>GID</th>
+										<th>Name</th>
+										<th>Team</th>
+										<th>In</th>
+										<th>Out</th>
+										<th>RG</th>
+										<th>OT100</th>
+										<th>OT150</th>
+										<th>OT300</th>
+										<th>TOT</th>
+										<th>Remark</th>
+										<th ng-if="'505505' === ur.gid">Action</th>
+									</tr>
+								</thead>
+								<tbody ng-init="showalltracker()">
+									<tr ng-repeat="t in trackers | orderBy: 'id' | filter: text">
+										<td>{{ t.gid }}</td>
+										<td>{{ t.name }}</td>
+										<td>{{ t.team }}</td>
+										<td>{{ t.signIn | date:'medium' }}</td>
+										<td>{{ t.signOut | date:'medium' }}</td>
+										<td class="data_rg">{{ t.rg }}</td>
+										<td class="data_ot100">{{ t.ot100 }}</td>
+										<td class="data_ot150">{{ t.ot150 }}</td>
+										<td class="data_ot300">{{ t.ot300 }}</td>
+										<td class="data_tot">{{ t.tot | number:2 }}</td>
+										<td>{{ t.remark }}</td>
+										<td ng-if="'505505' === ur.gid">
+											<a class="waves-attach waves-effect" href="/SCTTimestamp/edit-record.html?id={{ t.id }}" title="Edit This Record."><span class="icon icon-lg">create</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;
+											<a class="waves-attach waves-effect" ng-click="delRecord(t.id)" title="Delete This Record."><span class="icon icon-lg">delete</span></a>
+										</td>
+									</tr>
+									<tr>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th>Total</th>
+										<th id="tot_rg">0</th>
+										<th id="tot_ot100">0</th>
+										<th id="tot_ot150">0</th>
+										<th id="tot_ot300">0</th>
+										<th id="tot_tot">0</th>
+										<th></th>
+										<th ng-if="'505505' === ur.gid"></th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<p>Made with ❤  by Korat Service Desk</p>
+			<p>Copyright © <script language="JavaScript"> var d = new Date(); yr = d.getFullYear(); document.write(yr); </script></p>
+		</div>
+	</footer>
+
+	<!-- js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/base.min.js"></script>
+
+	<!-- js for this project -->
+	<script src="js/project.min.js"></script>
+	<script src='js/angular.min.js'></script>
+	<script src='js/history.js'></script>
+	<script type="text/javascript">
+	function summarry() {
+		var tot_rg = 0;
+		var tot_ot100 = 0;
+		var tot_ot150 = 0;
+		var tot_ot300 = 0;
+		var tot_tot = 0;
+		var rg = document.getElementsByClassName('data_rg');
+		var ot100 = document.getElementsByClassName('data_ot100');
+		var ot150 = document.getElementsByClassName('data_ot150');
+		var ot300 = document.getElementsByClassName('data_ot300');
+		var tot = document.getElementsByClassName('data_tot');
+		for (var i = 0; i < rg.length; i++) {
+			if (rg[i].innerHTML != '{{ t.rg }}') {
+				tot_rg += parseFloat(rg[i].innerHTML);
+				tot_ot100 += parseFloat(ot100[i].innerHTML);
+				tot_ot150 += parseFloat(ot150[i].innerHTML);
+				tot_ot300 += parseFloat(ot300[i].innerHTML);
+				tot_tot += parseFloat(tot[i].innerHTML);
+			}
+		}
+		document.getElementById('tot_rg').innerHTML = tot_rg.toFixed(2);
+		document.getElementById('tot_ot100').innerHTML = tot_ot100.toFixed(2);
+		document.getElementById('tot_ot150').innerHTML = tot_ot150.toFixed(2);
+		document.getElementById('tot_ot300').innerHTML = tot_ot300.toFixed(2);
+		document.getElementById('tot_tot').innerHTML = tot_tot.toFixed(2);
+	}
+
+	setTimeout(function(){summarry();}, 5000);
+	</script>
+</body>
+</html>

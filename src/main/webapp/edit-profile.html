@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 //EN">
+<html lang="en" ng-app="user">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport">
+	<title>Profile</title>
+
+	<!-- css -->
+	<link href="css/base.css" rel="stylesheet">
+
+	<!-- css for this project -->
+	<link href="css/project.min.css" rel="stylesheet">
+
+	<!-- favicon -->
+	<!-- ... -->
+
+	<!-- ie -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style type="text/css">
+	#file{display:none;}
+	#img{max-height:250px;max-width:200px;}
+	.btn-max {
+		width: 200px;
+	}
+	.p-top {
+		padding-top: 12px;
+	}
+
+	.form-control.form-control-inline {
+		display: inline-block;
+		vertical-align: middle;
+		width: 300px;
+	}
+
+	.leg-width {
+		width: 80%;
+	}
+
+	.hiddenme {
+		visibility: hidden;
+	}
+	</style>
+
+</head>
+<body class="avoid-fout" ng-controller="userCtrl" ng-init="currentuser()">
+	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
+		<div class="progress-circular progress-circular-alt progress-circular-center">
+			<div class="progress-circular-wrapper">
+				<div class="progress-circular-inner">
+					<div class="progress-circular-left">
+						<div class="progress-circular-spinner"></div>
+					</div>
+					<div class="progress-circular-gap"></div>
+					<div class="progress-circular-right">
+						<div class="progress-circular-spinner"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header class="header header-transparent header-waterfall">
+		<ul class="nav nav-list pull-left">
+			<li>
+				<a data-toggle="menu" href="#menu">
+					<span class="icon icon-lg">menu</span>
+				</a>
+			</li>
+		</ul>
+		<a class="header-logo margin-left-no" href="home.html">SCT Time Stamp</a>
+		<span class="header-text margin-left-no">
+			<i class="icon margin-right">chevron_right</i>Edit Profile
+		</span>
+		<ul class="nav nav-list pull-right">
+			<li>
+				<a data-toggle="menu" href="#profile">
+					<span class="access-hide">{{ ur.name }}</span>
+					<span class="avatar"><img alt="NY" src="avatar/{{ ur.gid }}.png"></span>
+				</a>
+			</li>
+		</ul>
+	</header>
+	<nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-content">
+				<a class="menu-logo" href="home.html">SCT Time Stamp</a>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="sign.html">Sign In/Out</a>
+					</li>
+				</ul>
+				<hr>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="history.html">History</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="list-profile.html">Profile List</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="holiday.html">Holiday</a>
+						<span class="menu-collapse-toggle collapsed" data-target="#calendar-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+						<ul class="menu-collapse collapse" id="calendar-elements">
+							<li>
+								<a class="waves-attach" href="holiday.html">Holiday List</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<hr>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="report.html">Report</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="list-profile.html">Profile</a>
+						<span class="menu-collapse-toggle collapsed" data-target="#profile-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+						<ul class="menu-collapse collapse" id="profile-elements">
+							<li>
+								<a ng-if="'ROLE_ADMIN' === ur.role" class="waves-attach" href="create-profile.html">Crate Profile</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="list-profile.html">Search</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<hr>
+			</div>
+		</div>
+	</nav>
+
+	<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-top">
+				<div class="menu-top-img">
+					<img alt="John Smith" src="css/images/samples/landscape.jpg" />
+				</div>
+				<div class="menu-top-info">
+					<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="NY" src="avatar/{{ ur.gid }}.png"></span>{{ ur.name }}</a>
+				</div>
+				<div class="menu-top-info-sub">
+					<small>Some additional information about {{ ur.name }}</small>
+				</div>
+			</div>
+			<div class="menu-content">
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="/SCTTimestamp/edit-profile.html?gid={{ ur.gid }}"><span class="icon icon-lg">account_box</span>Profile Settings</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="password.html"><span class="icon icon-lg">https</span>Change Password</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="history.html"><span class="icon icon-lg">add_to_photos</span>History</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="logout"><span class="icon icon-lg">exit_to_app</span>Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="content">
+		<div class="content-heading">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+						<!-- <h1 class="heading">SCT Time Stamp</h1> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" ng-init="getuser()">
+			<div class="row">
+				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+					<section class="content-inner">
+						<form method="POST" action="update" enctype="multipart/form-data">
+							<div class="row">
+								<div class="col-md-6">
+									<center>
+										<img width="200" height="260" alt="alt text for John Smith avatar" src="avatar/{{ profiles.gid }}.png" id="img" />
+										<div class="p-top">
+											<a id="addphoto" href="#" class="btn btn-green btn-max waves-attach waves-button waves-light waves-effect">+ Change Photo</a>
+											<a id="removephoto" href="#" class="hiddenme btn btn-green btn-max waves-attach waves-button waves-light waves-effect">x Remove Photo</a>
+											<input type="file" name="file" id="file" accept="image/*;capture=camera" capture="camera" />
+										</div>
+									</center>
+								</div>
+								<input type="hidden" name="id" value="{{ profiles.id }}">
+								<div class="col-md-6">
+									<div class="col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3 col-sm-8 col-sm-offset-4">
+										<a ng-if="'ROLE_ADMIN' === ur.role" class="waves-attach waves-effect pull-right" ng-click="initUid(profiles.id)" href="#modal" data-toggle="modal" title="Delete This Record."><span class="icon icon-lg text-red">delete</span></a>
+										<legend class="leg-width">Profile Settings</legend>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-2 col-md-3 col-sm-4">
+												<label class="form-label" for="input-gid">Gid</label>
+											</div>
+											<div class="col-lg-4 col-md-6 col-sm-8">
+												<input class="form-control form-control-inline" id="input-gid" name="gid" placeholder="GID" type="number" value="{{ profiles.gid }}" disabled>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-2 col-md-3 col-sm-4">
+												<label class="form-label" for="input-name">Name</label>
+											</div>
+											<div class="col-lg-4 col-md-6 col-sm-8">
+												<input class="form-control form-control-inline" id="input-name" name="name" placeholder="John Smith" type="text" value="{{ profiles.name }}" required="required" autofocus="autofocus">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-2 col-md-3 col-sm-4">
+												<label class="form-label" for="input-mail">Mail</label>
+											</div>
+											<div class="col-lg-4 col-md-6 col-sm-8">
+												<input class="form-control form-control-inline" id="input-mail" name="email" placeholder="John.smith@seagat.com" type="text" value="{{ profiles.email }}" required="required">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-2 col-md-3 col-sm-4">
+												<label class="form-label" for="input-team">Team</label>
+											</div>
+											<div class="col-lg-4 col-md-6 col-sm-8">
+												<!-- <input class="form-control form-control-inline" id="input-team" name="team" placeholder="A" type="text" value="{{ profiles.team }}" required="required"> -->
+												<div class="radio radio-adv">
+													<label for="input-radio-1">
+														<input class="access-hide" id="input-radio-1" name="team" value="A" type="radio" ng-checked="ta" required="required">Team A
+														<span class="circle"></span><span class="circle-check"></span>
+													</label>
+												</div>
+												<div class="radio radio-adv">
+													<label for="input-radio-2">
+														<input class="access-hide" id="input-radio-2" name="team" value="B" type="radio" ng-checked="tb" required="required">Team B
+														<span class="circle"></span><span class="circle-check"></span>
+													</label>
+												</div>
+												<div class="radio radio-adv">
+													<label for="input-radio-3">
+														<input class="access-hide" id="input-radio-3" name="team" value="C" type="radio" ng-checked="tc" required="required">Team C
+														<span class="circle"></span><span class="circle-check"></span>
+													</label>
+												</div>
+												<div class="radio radio-adv">
+													<label for="input-radio-4">
+														<input class="access-hide" id="input-radio-4" name="team" value="OFFICE" type="radio" ng-checked="to" required="required">OFFICE
+														<span class="circle"></span><span class="circle-check"></span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-3 col-md-3 col-sm-4">
+												<span class="form-label">OT Consent</span>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-8">
+												<div id="ot-1" class="radio radio-adv radio-inline">
+													<label for="input-radio-inline-1">
+														<input id="input-radio-inline-1" class="access-hide" name="otconsent" value="YES" type="radio" ng-checked="ot" ng-disabled="dis">Yes
+														<span class="circle"></span>
+														<span class="circle-check"></span>
+													</label>
+												</div>
+												<div id="ot-2" class="radio radio-adv radio-inline">
+													<label for="input-radio-inline-2">
+														<input id="input-radio-inline-2" class="access-hide" name="otconsent" value="NO" type="radio" ng-checked="!ot" ng-disabled="dis">No
+														<span class="circle"></span>
+														<span class="circle-check"></span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group-btn">
+										<div class="row">
+											<div class="col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3 col-sm-8 col-sm-offset-4">
+												<button class="btn btn-blue waves-attach waves-button waves-light waves-effect" type="submit">Submit</button>
+												<a class="btn waves-attach waves-button waves-effect" href="/SCTTimestamp/list-profile.html"><span class="text-black">Cancel</span></a>
+											</div>
+										</div>
+									</div>
+
+								</div><!-- End of field -->
+							</div>
+						</form>
+					</section>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<p>Made with ❤  by Korat Service Desk</p>
+			<p>Copyright © <script language="JavaScript"> var d = new Date(); yr = d.getFullYear(); document.write(yr); </script></p>
+		</div>
+	</footer>
+
+	<div aria-hidden="true" class="modal fade" id="modal" role="dialog" tabindex="-1">
+		<div class="modal-dialog modal-xs">
+			<div class="modal-content">
+				<div class="modal-inner">
+					<p>Do you really want to remove ?</p>
+				</div>
+				<div class="modal-footer">
+					<p class="text-right">
+						<button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button>
+						<button ng-click="deluser()" class="btn btn-flat btn-alt" data-dismiss="modal" type="button">OK</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/base.min.js"></script>
+
+	<!-- js for this project -->
+	<script src="js/project.min.js"></script>
+	<script src="js/addavatar.js"></script>
+	<script src='js/angular.min.js'></script>
+	<script src='js/user.js'></script>
+</body>
+</html>
