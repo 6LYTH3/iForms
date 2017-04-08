@@ -6839,8 +6839,8 @@ fieldset[disabled] .radio-adv input[type="radio"]:checked ~ .circle-icon {
 }
 
 .form-group-label {
-  margin-top: 36px;
-  margin-bottom: 36px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   position: relative;
 }
 .form-group-label .form-control, .form-group-label .picker__select--month,

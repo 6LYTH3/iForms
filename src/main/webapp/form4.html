@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="initial-scale=1.0, width=device-width" name="viewport">
-  <title>Form 3 | Break-down Schedule of Direct Cost</title>
+  <title>Form 4 | Summary of Labor Cost</title>
 
   <!-- css -->
   <link href="css/base.css" rel="stylesheet">
@@ -145,7 +145,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
-            <div class="txt-header">Break-down Schedule of Direct Cost</div>
+            <div class="txt-header">Summary of Labor Cost</div>
           </div>
         </div>
       </div>
@@ -224,170 +224,174 @@
     <section class="datasection">
       <div class="tile tile-blue">
         <div class="tile-inner">
-          <div class="pd-left"><b>Fill Form</b></div>
+          <div class="pd-left"><b>Direct Labor Form</b></div>
         </div>
       </div>
 
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-sm-4">
+          <div class="col-lg-6 col-sm-6">
             <div class="form-group form-group-label">
               <label class="floating-label" for="float-fdesc">Description</label>
               <input class="form-control" id="float-fdesc" type="text">
             </div>
           </div>
-          <div class="col-lg-1 col-sm-1">
+          <div class="col-lg-2 col-sm-2">
             <div class="form-group form-group-label">
-              <label class="floating-label" for="float-funit">Unit</label>
+              <label class="floating-label" for="float-funit">Total Manpower</label>
               <input class="form-control" id="float-funit" type="text">
-            </div>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <div class="form-group form-group-label">
-              <label class="floating-label" for="float-fqty">Quantity</label>
-              <input class="form-control" id="float-fqty" type="text">
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <div class="row">
-              <div class="col-lg-6 col-sm-6">
-                <div class="form-group form-group-label">
-                  <label class="floating-label" for="float-fmct">Material Cost</label>
-                  <input class="form-control" id="float-fmct" type="text">
-                </div>
-              </div>
-              <div class="col-lg-6 col-sm-6">
-                <div class="form-group form-group-label">
-                  <label class="floating-label" for="float-fmamt">Material Amount</label>
-                  <input class="form-control" id="float-fmamt" value="123" type="text" disabled>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-sm-3">
-            <div class="row">
-              <div class="col-lg-6 col-sm-6">
-                <div class="form-group form-group-label">
-                  <label class="floating-label" for="float-fmct">Labor Cost</label>
-                  <input class="form-control" id="float-fmct" type="text">
-                </div>
-              </div>
-              <div class="col-lg-6 col-sm-6">
-                <div class="form-group form-group-label">
-                  <label class="floating-label" for="float-fmamt">Labor Amount</label>
-                  <input class="form-control" id="float-fmamt" value="123" type="text" disabled>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4">
-            <div class="row">
-              <div class="col-lg-6 col-sm-6">
-                <div class="form-group form-group-label">
-                  <label class="floating-label" for="float-fmct">Equipment Cost</label>
-                  <input class="form-control" id="float-fmct" type="text">
-                </div>
-              </div>
-              <div class="col-lg-6 col-sm-6">
-                <div class="form-group form-group-label">
-                  <label class="floating-label" for="float-fmamt">Equipment Amount</label>
-                  <input class="form-control" id="float-fmamt" value="123" type="text" disabled>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <div class="row">
-              <div class="col-lg-6 col-sm-6">
-                <div class="form-group form-group-label">
-                  <label class="floating-label" for="float-fmct">Direct Total Cost</label>
-                  <input class="form-control" id="float-fmct" value="123" type="text" disabled>
-                </div>
-              </div>
-              <div class="col-lg-6 col-sm-6">
-                <div class="form-group form-group-label">
-                  <label class="floating-label" for="float-fmamt">Total Amount</label>
-                  <input class="form-control" id="float-fmamt" value="123" type="text" disabled>
-                </div>
-              </div>
             </div>
           </div>
           <div class="col-lg-2 col-sm-2">
             <div class="form-group form-group-label">
-              <label class="floating-label" for="float-fmh">Man Hour</label>
-              <input class="form-control" id="float-fmh" type="text">
+              <label class="floating-label" for="float-fqty">Unit Price</label>
+              <input class="form-control" id="float-fqty" type="text">
             </div>
           </div>
-          <div class="col-lg-3 col-sm-3">
+          <div class="col-lg-2 col-sm-2">
+            <div class="form-group form-group-label">
+              <label class="floating-label" for="float-famount">Amount</label>
+              <input class="form-control" id="float-famount" type="text">
+            </div>
+          </div>
+          <div class="col-lg-8 col-sm-8">
             <div class="form-group form-group-label">
               <label class="floating-label" for="float-fremark">Remark</label>
               <input class="form-control" id="float-fremark" type="text">
             </div>
           </div>
+
+          <div class="col-lg-4 col-sm-4">
+            <a class="btn btn-green waves-attach waves-button waves-light waves-effect pull-right">Add Item</a>
+          </div>
         </div>
-        <a class="btn btn-green waves-attach waves-button waves-light waves-effect pull-right">Add Item</a>
+
+        <div class="card-wrap">
+          <div class="card">
+            <div class="card-main">
+              <div class="card-inner margin-bottom-no">
+                <p class="card-heading">Direct Labor</p>
+                <div class="card-table">
+                  <div class="table-responsive">
+                    <table class="table table-hover table-stripe" title="Table with Hover and Stripe Rows">
+                      <thead>
+                        <tr>
+                          <th>Descrtion</th>
+                          <th>Total Manpower</th>
+                          <th>Unit Price</th>
+                          <th>Amount</th>
+                          <th>Remark</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Id augue sagittis</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>ABCDS</td>
+                        </tr>
+                        <tr>
+                          <td>Id augue sagittis</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>ABCDS</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <br>
       <div class="tile tile-blue">
         <div class="tile-inner">
-          <div class="pd-left"><b>Items</b></div>
+          <div class="pd-left"><b>Indirect Labor Form</b></div>
         </div>
       </div>
+
       <div class="container">
-        <div class="table-responsive">
-          <table class="table" title="Default Tabl">
-            <thead>
-              <tr>
-                <th>Descrtion</th>
-                <th>Unit</th>
-                <th>Quantity</th>
-                <th>Material Cost</th>
-                <th>Material Amount</th>
-                <th>Labor Cost</th>
-                <th>Labor Amount</th>
-                <th>Equipment Cost</th>
-                <th>Equipment Amount</th>
-                <th>Direct Total Cost</th>
-                <th>Amount</th>
-                <th>Man Hour</th>
-                <th>Remark</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Id augue sagittis</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>ABCDS</td>
-              </tr>
-              <tr>
-                <td>Id augue sagittis</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>ABCDS</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="row">
+          <div class="col-lg-6 col-sm-6">
+            <div class="form-group form-group-label">
+              <label class="floating-label" for="float-fdesc">Description</label>
+              <input class="form-control" id="float-fdesc" type="text">
+            </div>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <div class="form-group form-group-label">
+              <label class="floating-label" for="float-funit">Total Manpower</label>
+              <input class="form-control" id="float-funit" type="text">
+            </div>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <div class="form-group form-group-label">
+              <label class="floating-label" for="float-fqty">Unit Price</label>
+              <input class="form-control" id="float-fqty" type="text">
+            </div>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <div class="form-group form-group-label">
+              <label class="floating-label" for="float-famount">Amount</label>
+              <input class="form-control" id="float-famount" type="text">
+            </div>
+          </div>
+          <div class="col-lg-8 col-sm-8">
+            <div class="form-group form-group-label">
+              <label class="floating-label" for="float-fremark">Remark</label>
+              <input class="form-control" id="float-fremark" type="text">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-4">
+            <a class="btn btn-green waves-attach waves-button waves-light waves-effect pull-right">Add Item</a>
+          </div>
+        </div>
+
+        <div class="card-wrap">
+          <div class="card">
+            <div class="card-main">
+              <div class="card-inner margin-bottom-no">
+                <p class="card-heading">Indirect Labor</p>
+                <div class="card-table">
+                  <div class="table-responsive">
+                    <table class="table table-hover table-stripe" title="Table with Hover and Stripe Rows">
+                      <thead>
+                        <tr>
+                          <th>Descrtion</th>
+                          <th>Total Manpower</th>
+                          <th>Unit Price</th>
+                          <th>Amount</th>
+                          <th>Remark</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Id augue sagittis</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>ABCDS</td>
+                        </tr>
+                        <tr>
+                          <td>Id augue sagittis</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>ABCDS</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
