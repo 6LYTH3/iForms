@@ -1,0 +1,815 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 //EN">
+<html lang="en" ng-app="form1">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="initial-scale=1.0, width=device-width" name="viewport">
+  <title>Form 1 | Summary of Provisional Contract Price  for General contractor</title>
+
+  <!-- css -->
+  <link href="css/base.css" rel="stylesheet">
+
+  <!-- css for this project -->
+  <link href="css/project.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/master.css">
+
+  <!-- favicon -->
+  <!-- ... -->
+
+  <!-- ie -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="avoid-fout" ng-controller="form1Ctrl" ng-init="getFormId()">
+  <div class="avoid-fout-indicator avoid-fout-indicator-fixed">
+    <div class="progress-circular progress-circular-alt progress-circular-center">
+      <div class="progress-circular-wrapper">
+        <div class="progress-circular-inner">
+          <div class="progress-circular-left">
+            <div class="progress-circular-spinner"></div>
+          </div>
+          <div class="progress-circular-gap"></div>
+          <div class="progress-circular-right">
+            <div class="progress-circular-spinner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="header header-transparent header-waterfall">
+    <ul class="nav nav-list pull-left">
+      <li>
+        <a data-toggle="menu" href="#menu">
+          <span class="icon icon-lg">menu</span>
+        </a>
+      </li>
+    </ul>
+    <a class="header-logo margin-left-no" href="home.html">iForm</a>
+
+    <ul class="nav nav-list pull-right">
+      <li>
+        <a data-toggle="menu" href="#profile">
+          <span class="access-hide">{{ ur.name }}</span>
+          <span class="avatar"><img alt="NY" src="avatar/{{ ur.gid }}.png"></span>
+        </a>
+      </li>
+    </ul>
+  </header>
+  <nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
+    <div class="menu-scroll">
+      <div class="menu-content">
+        <a class="menu-logo" href="home.html">iForm</a>
+        <ul class="nav">
+          <li>
+            <a class="waves-attach" href="sign.html">Sign In/Out</a>
+          </li>
+        </ul>
+        <hr>
+        <ul class="nav">
+          <li>
+            <a class="waves-attach" href="history.html">History</a>
+          </li>
+          <li>
+            <a class="waves-attach" href="list-profile.html">Profile List</a>
+          </li>
+          <li>
+            <a class="waves-attach" href="holiday.html">Holiday</a>
+            <span class="menu-collapse-toggle collapsed" data-target="#calendar-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+            <ul class="menu-collapse collapse" id="calendar-elements">
+              <li>
+                <a class="waves-attach" href="holiday.html">Holiday List</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <hr>
+        <ul class="nav">
+          <li>
+            <a class="waves-attach" href="report.html">Report</a>
+          </li>
+          <li>
+            <a class="waves-attach" href="list-profile.html">Profile</a>
+            <span class="menu-collapse-toggle collapsed" data-target="#profile-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+            <ul class="menu-collapse collapse" id="profile-elements">
+              <li>
+                <a ng-if="'ROLE_ADMIN' === ur.role" class="waves-attach" href="create-profile.html">Crate Profile</a>
+              </li>
+              <li>
+                <a class="waves-attach" href="list-profile.html">Search</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <hr>
+      </div>
+    </div>
+  </nav>
+
+  <nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
+    <div class="menu-scroll">
+      <div class="menu-top">
+        <div class="menu-top-img">
+          <img alt="John Smith" src="css/images/samples/landscape.jpg" />
+        </div>
+        <div class="menu-top-info">
+          <a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="NY" src="avatar/{{ ur.gid }}.png"></span>{{ ur.name }}</a>
+        </div>
+        <div class="menu-top-info-sub">
+          <small>Some additional information about {{ ur.name }}</small>
+        </div>
+      </div>
+      <div class="menu-content">
+        <ul class="nav">
+          <li>
+            <a class="waves-attach" href="/SCTTimestamp/edit-profile.html?gid={{ ur.gid }}"><span class="icon icon-lg">account_box</span>Profile Settings</a>
+          </li>
+          <li>
+            <a class="waves-attach" href="password.html"><span class="icon icon-lg">https</span>Change Password</a>
+          </li>
+          <li>
+            <a class="waves-attach" href="history.html"><span class="icon icon-lg">add_to_photos</span>History</a>
+          </li>
+          <li>
+            <a class="waves-attach" href="logout"><span class="icon icon-lg">exit_to_app</span>Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="content-heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+            <div class="txt-header">Summary of Provisional Contract Price  for General contractor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-lg-push-3 col-sm-12 col-sm-push-1">
+          <section class="content-inner" ng-init="showmasterdoc()">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-4">
+                      <label class="form-label" for="input-projectName">Project Name</label>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                      <input class="form-control form-control-inline" id="input-projectName" name="projectName" value="{{ master.projectName }}" type="text" required="required" autofocus="autofocus">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-3 col-sm-4">
+                        <label class="form-label" for="input-jobno">Job No</label>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-8">
+                        <input class="form-control form-control-inline" id="input-jobno" name="jobno" value="{{ master.jobno }}" type="text" required="required">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-4">
+                      <label class="form-label" for="input-docnum">Document No</label>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                      <input class="form-control form-control-inline" id="input-docnum" name="docnum" value="{{ master.docnum }}" type="text" required="required">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-4">
+                      <label class="form-label" for="input-rev">Rev</label>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                      <input class="form-control form-control-inline" id="input-rev" name="rev" value="{{ master.rev }}" type="text" required="required">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-4">
+                      <label class="form-label" for="input-date">Date</label>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                      <input class="form-control form-control-inline" id="input-date" name="date" value="{{ master.date | date:'medium'}}" type="text" required="required">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="datasection">
+      <div class="tile tile-blue">
+        <div class="tile-inner">
+          <div class="pd-left"><b>DIRECT COST</b></div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('COMMON TEMPORARY FACILITY WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">COMMON TEMPORARY FACILITY WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd1-m">Matrial</label>
+            <input class="form-control" id="float-fd1-m" name="fd1m" value="{{ common.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd1-l">Labor</label>
+            <input class="form-control" id="float-fd1-l" name="fd1l" value="{{ common.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd1-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd1-c" name="fd1c" value="{{ common.construction }}" disabled >
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd1-t">Total</label>
+            <input class="form-control" id="float-fd1-t" name="fd1t" value="{{ common.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd1-r">Remarks</label>
+            <input class="form-control" id="float-fd1-r" name="fd1r" value="{{ common.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('CIVIL WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">CIVIL WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd2-m">Matrial</label>
+            <input class="form-control" id="float-fd2-m" name="fd2m" value="{{ civil.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd2-l">Labor</label>
+            <input class="form-control" id="float-fd2-l" name="fd2l" value="{{ civil.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd2-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd2-c" name="fd2c" value="{{ civil.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd2-t">Total</label>
+            <input class="form-control" id="float-fd2-t" name="fd2t" value="{{ civil.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd2-r">Remarks</label>
+            <input class="form-control" id="float-fd2-r" name="fd2r" value="{{ civil.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('ARCHITECTURE WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">ARCHITECTURE WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd3-m">Matrial</label>
+            <input class="form-control" id="float-fd3-m" name="fd3m" value="{{ archi.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd3-l">Labor</label>
+            <input class="form-control" id="float-fd3-l" name="fd3l" value="{{ archi.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd3-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd3-c" name="fd3c" value="{{ archi.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd3-t">Total</label>
+            <input class="form-control" id="float-fd3-t" name="fd3t" value="{{ archi.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd3-r">Remarks</label>
+            <input class="form-control" id="float-fd3-r" name="fd3r" value="{{ archi.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('STEEL STRUCTURE WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">STEEL / STRUCTURE WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd4-m">Matrial</label>
+            <input class="form-control" id="float-fd4-m" name="fd4m" value="{{ steel.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd4-l">Labor</label>
+            <input class="form-control" id="float-fd4-l" name="fd4l" value="{{ steel.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd4-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd4-c" name="fd4c" value="{{ steel.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd4-t">Total</label>
+            <input class="form-control" id="float-fd4-t" name="fd4t" value="{{ steel.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd4-r">Remarks</label>
+            <input class="form-control" id="float-fd4-r" name="fd4r" value="{{ steel.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('PIPING WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">PIPING WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd5-m">Matrial</label>
+            <input class="form-control" id="float-fd5-m" name="fd5m" value="{{ piping.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd5-l">Labor</label>
+            <input class="form-control" id="float-fd5-l" name="fd5l" value="{{ piping.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd5-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd5-c" name="fd5c" value="{{ piping.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd5-t">Total</label>
+            <input class="form-control" id="float-fd5-t" name="fd5t" value="{{ piping.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd5-r">Remarks</label>
+            <input class="form-control" id="float-fd5-r" name="fd5r" value="{{ piping.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group form-group-label" ng-init="showsection('PAINTING WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">PAINTING WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd6-m">Matrial</label>
+            <input class="form-control" id="float-fd6-m" name="fd6m" value="{{ painting.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd6-l">Labor</label>
+            <input class="form-control" id="float-fd6-l" name="fd6l" value="{{ painting.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd6-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd6-c" name="fd6c" value="{{ painting.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd6-t">Total</label>
+            <input class="form-control" id="float-fd6-t" name="fd6t" value="{{ painting.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd6-r">Remarks</label>
+            <input class="form-control" id="float-fd6-r" name="fd6r" value="{{ painting.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('INSULATION WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">INSULATION WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd7-m">Matrial</label>
+            <input class="form-control" id="float-fd7-m" name="fd7m" value="{{ insulation.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd7-l">Labor</label>
+            <input class="form-control" id="float-fd7-l" name="fd7l" value="{{ insulation.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd7-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd7-c" name="fd7c" value="{{ insulation.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd7-t">Total</label>
+            <input class="form-control" id="float-fd7-t" name="fd7t" value="{{ insulation.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd7-r">Remarks</label>
+            <input class="form-control" id="float-fd7-r" name="fd7r" value="{{ insulation.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('EQUIPMENT  INSTALLATION WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">EQUIPMENT  INSTALLATION WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd8-m">Matrial</label>
+            <input class="form-control" id="float-fd8-m" name="fd8m" value="{{ equip.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd8-l">Labor</label>
+            <input class="form-control" id="float-fd8-l" name="fd8l" value="{{ equip.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd8-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd8-c" name="fd8c" value="{{ equip.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd8-t">Total</label>
+            <input class="form-control" id="float-fd8-t"  name="fd8t" value="{{ equip.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd8-r">Remarks</label>
+            <input class="form-control" id="float-fd8-r" name="fd8r" value="{{ equip.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('ELECTRICAL WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">ELECTRICAL WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd9-m">Matrial</label>
+            <input class="form-control" id="float-fd9-m" name="fd9m" value="{{ elec.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd9-l">Labor</label>
+            <input class="form-control" id="float-fd9-l" name="fd9l" value="{{ elec.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd9-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd9-c" name="fd9c" value="{{ elec.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd9-t">Total</label>
+            <input class="form-control" id="float-fd9-t" name="fd9t" value="{{ elec.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd9-r">Remarks</label>
+            <input class="form-control" id="float-fd9-r" name="fd9r" value="{{ elec.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('INSTRUMENT WORK')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">INSTRUMENT WORK</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd10-m">Matrial</label>
+            <input class="form-control" id="float-fd10-m" name="fd10m" value="{{ instrument.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd10-l">Labor</label>
+            <input class="form-control" id="float-fd10-l" name="fd10l" value="{{ instrument.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fd10-c">Construction Equipment</label>
+            <input class="form-control" id="float-fd10-c" name="fd10c" value="{{ instrument.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fd10-t">Total</label>
+            <input class="form-control" id="float-fd10-t" name="fd10t" value="{{ instrument.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fd10-r">Remarks</label>
+            <input class="form-control" id="float-fd10-r" name="fd10r" value="{{ instrument.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label"><b>Sub-Total</b></label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fda-m">Matrial</label>
+            <input class="form-control" id="float-fda-m" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fda-l">Labor</label>
+            <input class="form-control" id="float-fda-l" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fda-c">Construction Equipment</label>
+            <input class="form-control" id="float-fda-c" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fda-t">Total</label>
+            <input class="form-control" id="float-fda-t" value="123" type="text" disabled>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tile tile-blue">
+        <div class="tile-inner">
+          <div class="pd-left"><b>INDIRECT COST</b></div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('INDIRECT LABOR')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">INDIRECT LABOR</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi1-m">Matrial</label>
+            <input class="form-control" id="float-fi1-m" name="fi1m" value="{{ indirect.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi1-l">Labor</label>
+            <input class="form-control" id="float-fi1-l" name="fi1l" value="{{ indirect.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fi1-c">Construction Equipment</label>
+            <input class="form-control" id="float-fi1-c" name="fi1c" value="{{ indirect.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi1-t">Total</label>
+            <input class="form-control" id="float-fi1-t" name="fi1t" value="{{ indirect.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fi1-r">Remarks</label>
+            <input class="form-control" id="float-fi1-r" name="fi1r" value="{{ indirect.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('TEMPORARY FACILITIES')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">TEMPORARY FACILITIES</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi2-m">Matrial</label>
+            <input class="form-control" id="float-fi2-m" name="fi2m" value="{{ temp.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi2-l">Labor</label>
+            <input class="form-control" id="float-fi2-l" name="fi2l" value="{{ temp.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fi2-c">Construction Equipment</label>
+            <input class="form-control" id="float-fi2-c" name="fi2c" value="{{ temp.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi2-t">Total</label>
+            <input class="form-control" id="float-fi2-t" name="fi2t" value="{{ temp.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fi2-r">Remarks</label>
+            <input class="form-control" id="float-fi2-r" name="fi2r" value="{{ temp.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('GENERAL FIELD EXPENSES')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">GENERAL FIELD EXPENSES</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi3-m">Matrial</label>
+            <input class="form-control" id="float-fi3-m" name="fi3m" value="{{ general.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi3-l">Labor</label>
+            <input class="form-control" id="float-fi3-l" name="fi3l" value="{{ general.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fi3-c">Construction Equipment</label>
+            <input class="form-control" id="float-fi3-c" name="fi3c" value="{{ general.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi3-t">Total</label>
+            <input class="form-control" id="float-fi3-t" name="fi3t" value="{{ general.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fi3-r">Remarks</label>
+            <input class="form-control" id="float-fi3-r" name="fi3r" value="{{ general.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('INSURANCE')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">INSURANCE</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi4-m">Matrial</label>
+            <input class="form-control" id="float-fi4-m" name="fi4m" value="{{ insurance.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi4-l">Labor</label>
+            <input class="form-control" id="float-fi4-l" name="fi4l" value="{{ insurance.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fi4-c">Construction Equipment</label>
+            <input class="form-control" id="float-fi4-c" name="fi4c" value="{{ insurance.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi4-t">Total</label>
+            <input class="form-control" id="float-fi4-t" name="fi4t" value="{{ insurance.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fi4-r">Remarks</label>
+            <input class="form-control" id="float-fi4-r" name="fi4r" value="{{ insurance.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('HSE')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">HSE (HEALTH, SAFETY, ENVIRONMENT)</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi5-m">Matrial</label>
+            <input class="form-control" id="float-fi5-m" name="fi5m" value="{{ hse.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi5-l">Labor</label>
+            <input class="form-control" id="float-fi5-l" name="fi5l" value="{{ hse.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fi5-c">Construction Equipment</label>
+            <input class="form-control" id="float-fi5-c" name="fi5c" value="{{ hse.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi5-t">Total</label>
+            <input class="form-control" id="float-fi5-t" name="fi5t" value="{{ hse.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fi5-r">Remarks</label>
+            <input class="form-control" id="float-fi5-r" name="fi5r" value="{{ hse.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group form-group-label" ng-init="showsection('PROFIT')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">OVERHEAD & PROFIT</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi6-m">Matrial</label>
+            <input class="form-control" id="float-fi6-m" name="fi6m" value="{{ profit.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi6-l">Labor</label>
+            <input class="form-control" id="float-fi6-l" name="fi6l" value="{{ profit.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fi6-c">Construction Equipment</label>
+            <input class="form-control" id="float-fi6-c" name="fi6c" value="{{ profit.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi6-t">Total</label>
+            <input class="form-control" id="float-fi6-t" name="fi6t" value="{{ profit.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fi6-r">Remarks</label>
+            <input class="form-control" id="float-fi6-r" name="fi6r" value="{{ profit.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-label" ng-init="showsection('TAX')">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label">TAX & DUTIES (V.A.T EXCLUDED)</label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi7-m">Matrial</label>
+            <input class="form-control" id="float-fi7-m" name="fi7m" value="{{ tax.matrial }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi7-l">Labor</label>
+            <input class="form-control" id="float-fi7-l" name="fi7l" value="{{ tax.labor }}" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fi7-c">Construction Equipment</label>
+            <input class="form-control" id="float-fi7-c" name="fi7c" value="{{ tax.construction }}" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fi7-t">Total</label>
+            <input class="form-control" id="float-fi7-t" name="fi7t" value="{{ tax.total }}" disabled>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <label class="floating-label" for="float-fi7-r">Remarks</label>
+            <input class="form-control" id="float-fi7-r" name="fi7r" value="{{ tax.remark }}" disabled>
+          </div>
+        </div>
+      </div>
+      <div class="form-group form-group-label">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label"><b>Sub-Total</b></label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fib-m">Matrial</label>
+            <input class="form-control" id="float-fib-m" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fib-l">Labor</label>
+            <input class="form-control" id="float-fib-l" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fib-c">Construction Equipment</label>
+            <input class="form-control" id="float-fib-c" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fib-t">Total</label>
+            <input class="form-control" id="float-fib-t" value="123" type="text" disabled>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="form-group form-group-label">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label"><b>Total</b></label>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fdt-m">Matrial</label>
+            <input class="form-control" id="float-fdt-m" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fdt-l">Labor</label>
+            <input class="form-control" id="float-fdt-l" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <label class="floating-label" for="float-fdt-c">Construction Equipment</label>
+            <input class="form-control" id="float-fdt-c" value="123" type="text" disabled>
+          </div>
+          <div class="col-lg-1 col-sm-1">
+            <label class="floating-label" for="float-fdt-t">Total</label>
+            <input class="form-control" id="float-fdt-t" value="123" type="text" disabled>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </form>
+</div><!-- End Container -->
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <p>Made with ❤  by Raiwin Maintenance and service.,co led</p>
+    <p>Copyright © <script language="JavaScript"> var d = new Date(); yr = d.getFullYear(); document.write(yr); </script></p>
+  </div>
+</footer>
+
+
+<!-- js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/base.min.js"></script>
+
+<!-- js for this project -->
+<script src="js/project.min.js"></script>
+<script src='js/angular.min.js'></script>
+<script src='js/user.js'></script>
+<script src='js/form1.js'></script>
+
+</body>
+</html>

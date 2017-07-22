@@ -151,11 +151,13 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-lg-push-3 col-sm-12 col-sm-push-1">
-          <section class="content-inner">
-            <form method="POST" action="adduser" enctype="multipart/form-data">
+    <form method="POST" action="createGeneralContrator" enctype="multipart/form-data">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-lg-push-3 col-sm-12 col-sm-push-1">
+            <section class="content-inner">
+
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -215,577 +217,587 @@
                   </div>
                 </div>
               </div>
-            </form>
-          </section>
-        </div>
-      </div>
-    </div>
 
-    <section class="datasection">
-      <div class="tile tile-blue">
-        <div class="tile-inner">
-          <div class="pd-left"><b>DIRECT COST</b></div>
-        </div>
-      </div>
-
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">COMMON TEMPORARY FACILITY WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd1-m">Matrial</label>
-            <input class="form-control" id="float-fd1-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd1-l">Labor</label>
-            <input class="form-control" id="float-fd1-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd1-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd1-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd1-t">Total</label>
-            <input class="form-control" id="float-fd1-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd1-r">Remarks</label>
-            <input class="form-control" id="float-fd1-r" type="text">
+            </section>
           </div>
         </div>
       </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">CIVIL WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd2-m">Matrial</label>
-            <input class="form-control" id="float-fd2-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd2-l">Labor</label>
-            <input class="form-control" id="float-fd2-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd2-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd2-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd2-t">Total</label>
-            <input class="form-control" id="float-fd2-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd2-r">Remarks</label>
-            <input class="form-control" id="float-fd2-r" type="text">
+      <section class="datasection">
+        <div class="tile tile-blue">
+          <div class="tile-inner">
+            <div class="pd-left"><b>DIRECT COST</b></div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">ARCHITECTURE WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd3-m">Matrial</label>
-            <input class="form-control" id="float-fd3-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd3-l">Labor</label>
-            <input class="form-control" id="float-fd3-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd3-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd3-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd3-t">Total</label>
-            <input class="form-control" id="float-fd3-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd3-r">Remarks</label>
-            <input class="form-control" id="float-fd3-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">COMMON TEMPORARY FACILITY WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd1-m">Matrial</label>
+              <input class="form-control" id="float-fd1-m" name="fd1m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd1-l">Labor</label>
+              <input class="form-control" id="float-fd1-l" name="fd1l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd1-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd1-c" name="fd1c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd1-t">Total</label>
+              <input class="form-control" id="float-fd1-t" name="fd1t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd1-r">Remarks</label>
+              <input class="form-control" id="float-fd1-r" name="fd1r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">STEEL / STRUCTURE WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd4-m">Matrial</label>
-            <input class="form-control" id="float-fd4-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd4-l">Labor</label>
-            <input class="form-control" id="float-fd4-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd4-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd4-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd4-t">Total</label>
-            <input class="form-control" id="float-fd4-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd4-r">Remarks</label>
-            <input class="form-control" id="float-fd4-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">CIVIL WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd2-m">Matrial</label>
+              <input class="form-control" id="float-fd2-m" name="fd2m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd2-l">Labor</label>
+              <input class="form-control" id="float-fd2-l" name="fd2l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd2-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd2-c" name="fd2c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd2-t">Total</label>
+              <input class="form-control" id="float-fd2-t" name="fd2t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd2-r">Remarks</label>
+              <input class="form-control" id="float-fd2-r" name="fd2r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">PIPING WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd5-m">Matrial</label>
-            <input class="form-control" id="float-fd5-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd5-l">Labor</label>
-            <input class="form-control" id="float-fd5-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd5-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd5-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd5-t">Total</label>
-            <input class="form-control" id="float-fd5-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd5-r">Remarks</label>
-            <input class="form-control" id="float-fd5-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">ARCHITECTURE WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd3-m">Matrial</label>
+              <input class="form-control" id="float-fd3-m" name="fd3m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd3-l">Labor</label>
+              <input class="form-control" id="float-fd3-l" name="fd3l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd3-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd3-c" name="fd3c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd3-t">Total</label>
+              <input class="form-control" id="float-fd3-t" name="fd3t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd3-r">Remarks</label>
+              <input class="form-control" id="float-fd3-r" name="fd3r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">PAINTING WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd6-m">Matrial</label>
-            <input class="form-control" id="float-fd6-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd6-l">Labor</label>
-            <input class="form-control" id="float-fd6-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd6-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd6-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd6-t">Total</label>
-            <input class="form-control" id="float-fd6-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd6-r">Remarks</label>
-            <input class="form-control" id="float-fd6-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">STEEL / STRUCTURE WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd4-m">Matrial</label>
+              <input class="form-control" id="float-fd4-m" name="fd4m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd4-l">Labor</label>
+              <input class="form-control" id="float-fd4-l" name="fd4l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd4-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd4-c" name="fd4c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd4-t">Total</label>
+              <input class="form-control" id="float-fd4-t" name="fd4t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd4-r">Remarks</label>
+              <input class="form-control" id="float-fd4-r" name="fd4r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">INSULATION WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd7-m">Matrial</label>
-            <input class="form-control" id="float-fd7-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd7-l">Labor</label>
-            <input class="form-control" id="float-fd7-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd7-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd7-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd7-t">Total</label>
-            <input class="form-control" id="float-fd7-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd7-r">Remarks</label>
-            <input class="form-control" id="float-fd7-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">PIPING WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd5-m">Matrial</label>
+              <input class="form-control" id="float-fd5-m" name="fd5m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd5-l">Labor</label>
+              <input class="form-control" id="float-fd5-l" name="fd5l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd5-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd5-c" name="fd5c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd5-t">Total</label>
+              <input class="form-control" id="float-fd5-t" name="fd5t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd5-r">Remarks</label>
+              <input class="form-control" id="float-fd5-r" name="fd5r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">EUIPMENT  INSTALLATION WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd8-m">Matrial</label>
-            <input class="form-control" id="float-fd8-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd8-l">Labor</label>
-            <input class="form-control" id="float-fd8-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd8-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd8-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd8-t">Total</label>
-            <input class="form-control" id="float-fd8-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd8-r">Remarks</label>
-            <input class="form-control" id="float-fd8-r" type="text">
+
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">PAINTING WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd6-m">Matrial</label>
+              <input class="form-control" id="float-fd6-m" name="fd6m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd6-l">Labor</label>
+              <input class="form-control" id="float-fd6-l" name="fd6l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd6-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd6-c" name="fd6c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd6-t">Total</label>
+              <input class="form-control" id="float-fd6-t" name="fd6t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd6-r">Remarks</label>
+              <input class="form-control" id="float-fd6-r" name="fd6r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">ELECTRICAL WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd9-m">Matrial</label>
-            <input class="form-control" id="float-fd9-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd9-l">Labor</label>
-            <input class="form-control" id="float-fd9-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd9-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd9-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd9-t">Total</label>
-            <input class="form-control" id="float-fd9-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd9-r">Remarks</label>
-            <input class="form-control" id="float-fd9-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">INSULATION WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd7-m">Matrial</label>
+              <input class="form-control" id="float-fd7-m" name="fd7m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd7-l">Labor</label>
+              <input class="form-control" id="float-fd7-l" name="fd7l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd7-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd7-c" name="fd7c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd7-t">Total</label>
+              <input class="form-control" id="float-fd7-t" name="fd7t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd7-r">Remarks</label>
+              <input class="form-control" id="float-fd7-r" name="fd7r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">INSTRUMENT WORK</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd10-m">Matrial</label>
-            <input class="form-control" id="float-fd10-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd10-l">Labor</label>
-            <input class="form-control" id="float-fd10-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd10-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd10-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd10-t">Total</label>
-            <input class="form-control" id="float-fd10-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd10-r">Remarks</label>
-            <input class="form-control" id="float-fd10-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">EUIPMENT  INSTALLATION WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd8-m">Matrial</label>
+              <input class="form-control" id="float-fd8-m" name="fd8m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd8-l">Labor</label>
+              <input class="form-control" id="float-fd8-l" name="fd8l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd8-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd8-c" name="fd8c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd8-t">Total</label>
+              <input class="form-control" id="float-fd8-t"  name="fd8t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd8-r">Remarks</label>
+              <input class="form-control" id="float-fd8-r" name="fd8r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label"><b>Sub-Total</b></label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fda-m">Matrial</label>
-            <input class="form-control" id="float-fda-m" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fda-l">Labor</label>
-            <input class="form-control" id="float-fda-l" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fda-c">Construction Equipment</label>
-            <input class="form-control" id="float-fda-c" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fda-t">Total</label>
-            <input class="form-control" id="float-fda-t" value="123" type="text" disabled>
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">ELECTRICAL WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd9-m">Matrial</label>
+              <input class="form-control" id="float-fd9-m" name="fd9m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd9-l">Labor</label>
+              <input class="form-control" id="float-fd9-l" name="fd9l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd9-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd9-c" name="fd9c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd9-t">Total</label>
+              <input class="form-control" id="float-fd9-t" name="fd9t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd9-r">Remarks</label>
+              <input class="form-control" id="float-fd9-r" name="fd9r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-
-      <div class="tile tile-blue">
-        <div class="tile-inner">
-          <div class="pd-left"><b>INDIRECT COST</b></div>
-        </div>
-      </div>
-
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">INDIRECT LABOR</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd1-m">Matrial</label>
-            <input class="form-control" id="float-fd1-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd1-l">Labor</label>
-            <input class="form-control" id="float-fd1-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd1-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd1-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd1-t">Total</label>
-            <input class="form-control" id="float-fd1-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd1-r">Remarks</label>
-            <input class="form-control" id="float-fd1-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">INSTRUMENT WORK</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd10-m">Matrial</label>
+              <input class="form-control" id="float-fd10-m" name="fd10m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd10-l">Labor</label>
+              <input class="form-control" id="float-fd10-l" name="fd10l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fd10-c">Construction Equipment</label>
+              <input class="form-control" id="float-fd10-c" name="fd10c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fd10-t">Total</label>
+              <input class="form-control" id="float-fd10-t" name="fd10t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fd10-r">Remarks</label>
+              <input class="form-control" id="float-fd10-r" name="fd10r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">TEMPORARY FACILITIES</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd2-m">Matrial</label>
-            <input class="form-control" id="float-fd2-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd2-l">Labor</label>
-            <input class="form-control" id="float-fd2-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd2-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd2-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd2-t">Total</label>
-            <input class="form-control" id="float-fd2-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd2-r">Remarks</label>
-            <input class="form-control" id="float-fd2-r" type="text">
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label"><b>Sub-Total</b></label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fda-m">Matrial</label>
+              <input class="form-control" id="float-fda-m" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fda-l">Labor</label>
+              <input class="form-control" id="float-fda-l" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fda-c">Construction Equipment</label>
+              <input class="form-control" id="float-fda-c" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fda-t">Total</label>
+              <input class="form-control" id="float-fda-t" value="123" value=" " type="text" disabled>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">GENERAL FIELD EXPENSES</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd3-m">Matrial</label>
-            <input class="form-control" id="float-fd3-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd3-l">Labor</label>
-            <input class="form-control" id="float-fd3-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd3-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd3-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd3-t">Total</label>
-            <input class="form-control" id="float-fd3-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd3-r">Remarks</label>
-            <input class="form-control" id="float-fd3-r" type="text">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">INSURANCE</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd4-m">Matrial</label>
-            <input class="form-control" id="float-fd4-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd4-l">Labor</label>
-            <input class="form-control" id="float-fd4-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd4-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd4-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd4-t">Total</label>
-            <input class="form-control" id="float-fd4-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd4-r">Remarks</label>
-            <input class="form-control" id="float-fd4-r" type="text">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">HSE (HEALTH, SAFETY, ENVIRONMENT)</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd5-m">Matrial</label>
-            <input class="form-control" id="float-fd5-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd5-l">Labor</label>
-            <input class="form-control" id="float-fd5-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd5-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd5-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd5-t">Total</label>
-            <input class="form-control" id="float-fd5-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd5-r">Remarks</label>
-            <input class="form-control" id="float-fd5-r" type="text">
-          </div>
-        </div>
-      </div>
 
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">OVERHEAD & PROFIT</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd6-m">Matrial</label>
-            <input class="form-control" id="float-fd6-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd6-l">Labor</label>
-            <input class="form-control" id="float-fd6-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd6-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd6-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd6-t">Total</label>
-            <input class="form-control" id="float-fd6-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd6-r">Remarks</label>
-            <input class="form-control" id="float-fd6-r" type="text">
+        <div class="tile tile-blue">
+          <div class="tile-inner">
+            <div class="pd-left"><b>INDIRECT COST</b></div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label">TAX & DUTIES (V.A.T EXCLUDED)</label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd7-m">Matrial</label>
-            <input class="form-control" id="float-fd7-m" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd7-l">Labor</label>
-            <input class="form-control" id="float-fd7-l" type="text">
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fd7-c">Construction Equipment</label>
-            <input class="form-control" id="float-fd7-c" type="text">
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fd7-t">Total</label>
-            <input class="form-control" id="float-fd7-t" type="text">
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <label class="floating-label" for="float-fd7-r">Remarks</label>
-            <input class="form-control" id="float-fd7-r" type="text">
-          </div>
-        </div>
-      </div>
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label"><b>Sub-Total</b></label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fdb-m">Matrial</label>
-            <input class="form-control" id="float-fdb-m" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fdb-l">Labor</label>
-            <input class="form-control" id="float-fdb-l" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fdb-c">Construction Equipment</label>
-            <input class="form-control" id="float-fdb-c" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fdb-t">Total</label>
-            <input class="form-control" id="float-fdb-t" value="123" type="text" disabled>
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">INDIRECT LABOR</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi1-m">Matrial</label>
+              <input class="form-control" id="float-fi1-m" name="fi1m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi1-l">Labor</label>
+              <input class="form-control" id="float-fi1-l" name="fi1l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fi1-c">Construction Equipment</label>
+              <input class="form-control" id="float-fi1-c" name="fi1c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi1-t">Total</label>
+              <input class="form-control" id="float-fi1-t" name="fi1t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fi1-r">Remarks</label>
+              <input class="form-control" id="float-fi1-r" name="fi1r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
-      <hr>
 
-      <div class="form-group form-group-label">
-        <div class="row">
-          <div class="col-sm-3">
-            <label class="form-label"><b>Total</b></label>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fdt-m">Matrial</label>
-            <input class="form-control" id="float-fdt-m" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fdt-l">Labor</label>
-            <input class="form-control" id="float-fdt-l" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <label class="floating-label" for="float-fdt-c">Construction Equipment</label>
-            <input class="form-control" id="float-fdt-c" value="123" type="text" disabled>
-          </div>
-          <div class="col-lg-1 col-sm-1">
-            <label class="floating-label" for="float-fdt-t">Total</label>
-            <input class="form-control" id="float-fdt-t" value="123" type="text" disabled>
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">TEMPORARY FACILITIES</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi2-m">Matrial</label>
+              <input class="form-control" id="float-fi2-m" name="fi2m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi2-l">Labor</label>
+              <input class="form-control" id="float-fi2-l" name="fi2l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fi2-c">Construction Equipment</label>
+              <input class="form-control" id="float-fi2-c" name="fi2c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi2-t">Total</label>
+              <input class="form-control" id="float-fi2-t" name="fi2t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fi2-r">Remarks</label>
+              <input class="form-control" id="float-fi2-r" name="fi2r" value=" " type="text">
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
+
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">GENERAL FIELD EXPENSES</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi3-m">Matrial</label>
+              <input class="form-control" id="float-fi3-m" name="fi3m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi3-l">Labor</label>
+              <input class="form-control" id="float-fi3-l" name="fi3l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fi3-c">Construction Equipment</label>
+              <input class="form-control" id="float-fi3-c" name="fi3c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi3-t">Total</label>
+              <input class="form-control" id="float-fi3-t" name="fi3t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fi3-r">Remarks</label>
+              <input class="form-control" id="float-fi3-r" name="fi3r" value=" " type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">INSURANCE</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi4-m">Matrial</label>
+              <input class="form-control" id="float-fi4-m" name="fi4m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi4-l">Labor</label>
+              <input class="form-control" id="float-fi4-l" name="fi4l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fi4-c">Construction Equipment</label>
+              <input class="form-control" id="float-fi4-c" name="fi4c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi4-t">Total</label>
+              <input class="form-control" id="float-fi4-t" name="fi4t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fi4-r">Remarks</label>
+              <input class="form-control" id="float-fi4-r" name="fi4r" value=" " type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">HSE (HEALTH, SAFETY, ENVIRONMENT)</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi5-m">Matrial</label>
+              <input class="form-control" id="float-fi5-m" name="fi5m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi5-l">Labor</label>
+              <input class="form-control" id="float-fi5-l" name="fi5l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fi5-c">Construction Equipment</label>
+              <input class="form-control" id="float-fi5-c" name="fi5c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi5-t">Total</label>
+              <input class="form-control" id="float-fi5-t" name="fi5t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fi5-r">Remarks</label>
+              <input class="form-control" id="float-fi5-r" name="fi5r" value=" " type="text">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">OVERHEAD & PROFIT</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi6-m">Matrial</label>
+              <input class="form-control" id="float-fi6-m" name="fi6m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi6-l">Labor</label>
+              <input class="form-control" id="float-fi6-l" name="fi6l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fi6-c">Construction Equipment</label>
+              <input class="form-control" id="float-fi6-c" name="fi6c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi6-t">Total</label>
+              <input class="form-control" id="float-fi6-t" name="fi6t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fi6-r">Remarks</label>
+              <input class="form-control" id="float-fi6-r" name="fi6r" value=" " type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label">TAX & DUTIES (V.A.T EXCLUDED)</label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi7-m">Matrial</label>
+              <input class="form-control" id="float-fi7-m" name="fi7m" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi7-l">Labor</label>
+              <input class="form-control" id="float-fi7-l" name="fi7l" value="0" type="number">
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fi7-c">Construction Equipment</label>
+              <input class="form-control" id="float-fi7-c" name="fi7c" value="0" type="number">
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fi7-t">Total</label>
+              <input class="form-control" id="float-fi7-t" name="fi7t" value="0" type="number">
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <label class="floating-label" for="float-fi7-r">Remarks</label>
+              <input class="form-control" id="float-fi7-r" name="fi7r" value=" " type="text">
+            </div>
+          </div>
+        </div>
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label"><b>Sub-Total</b></label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fib-m">Matrial</label>
+              <input class="form-control" id="float-fib-m" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fib-l">Labor</label>
+              <input class="form-control" id="float-fib-l" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fib-c">Construction Equipment</label>
+              <input class="form-control" id="float-fib-c" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fib-t">Total</label>
+              <input class="form-control" id="float-fib-t" value="123" type="text" disabled>
+            </div>
+          </div>
+        </div>
+        <hr>
+
+        <div class="form-group form-group-label">
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="form-label"><b>Total</b></label>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fdt-m">Matrial</label>
+              <input class="form-control" id="float-fdt-m" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fdt-l">Labor</label>
+              <input class="form-control" id="float-fdt-l" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <label class="floating-label" for="float-fdt-c">Construction Equipment</label>
+              <input class="form-control" id="float-fdt-c" value="123" type="text" disabled>
+            </div>
+            <div class="col-lg-1 col-sm-1">
+              <label class="floating-label" for="float-fdt-t">Total</label>
+              <input class="form-control" id="float-fdt-t" value="123" type="text" disabled>
+            </div>
+
+            <div class="col-lg-1 col-sm-1">
+              <button class="btn btn-blue waves-attach waves-button waves-light waves-effect" type="submit">Submit</button>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+    </form>
+  </div><!-- End Container -->
+
+
+
 
   <footer class="footer">
     <div class="container">
@@ -793,7 +805,7 @@
       <p>Copyright © <script language="JavaScript"> var d = new Date(); yr = d.getFullYear(); document.write(yr); </script></p>
     </div>
   </footer>
-  
+
 
   <!-- js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

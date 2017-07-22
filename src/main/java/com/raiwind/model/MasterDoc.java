@@ -24,19 +24,23 @@ public class MasterDoc {
 	private String docnum;
 	private int rev;
 	private Date date;
+	@NotNull
+	@Column(unique = true)
 	private String formId;
+	private String type;
 
 	public MasterDoc() {
 
 	}
 
-	public MasterDoc(String projectName, String jobno, String docnum, int rev, Date date, String formId) {
+	public MasterDoc(String projectName, String jobno, String docnum, int rev, Date date, String formId, String type) {
 		this.projectName = projectName;
 		this.jobno = jobno;
 		this.docnum = docnum;
 		this.rev = rev;
 		this.date = date;
 		this.formId = formId;
+		this.type = type;
 	}
 
 	public long getId() {
@@ -93,6 +97,14 @@ public class MasterDoc {
 
 	public void setFormId(String formId) {
 		this.formId = formId;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }
