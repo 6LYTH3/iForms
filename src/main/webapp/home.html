@@ -62,358 +62,360 @@
 		<div class="menu-scroll">
 			<div class="menu-content">
 				<a class="menu-logo" href="home.html">iForm</a>
+				<!--
 				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="sign.html">Sign In/Out</a>
-					</li>
-				</ul>
-				<hr>
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="history.html">History</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="list-profile.html">Profile List</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="holiday.html">Holiday</a>
-						<span class="menu-collapse-toggle collapsed" data-target="#calendar-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
-						<ul class="menu-collapse collapse" id="calendar-elements">
-							<li>
-								<a class="waves-attach" href="holiday.html">Holiday List</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<hr>
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="report.html">Report</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="list-profile.html">Profile</a>
-						<span class="menu-collapse-toggle collapsed" data-target="#profile-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
-						<ul class="menu-collapse collapse" id="profile-elements">
-							<li>
-								<a ng-if="'ROLE_ADMIN' === ur.role" class="waves-attach" href="create-profile.html">Crate Profile</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="list-profile.html">Search</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<hr>
-			</div>
-		</div>
-	</nav>
-
-	<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
-		<div class="menu-scroll">
-			<div class="menu-top">
-				<div class="menu-top-img">
-					<img alt="John Smith" src="css/images/samples/landscape.jpg" />
-				</div>
-				<div class="menu-top-info">
-					<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="NY" src="avatar/{{ ur.gid }}.png"></span>{{ ur.name }}</a>
-				</div>
-				<div class="menu-top-info-sub">
-					<small>Some additional information about {{ ur.name }}</small>
-				</div>
-			</div>
-			<div class="menu-content">
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="/SCTTimestamp/edit-profile.html?gid={{ ur.gid }}"><span class="icon icon-lg">account_box</span>Profile Settings</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="password.html"><span class="icon icon-lg">https</span>Change Password</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="history.html"><span class="icon icon-lg">add_to_photos</span>History</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="logout"><span class="icon icon-lg">exit_to_app</span>Logout</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<div class="content">
-		<div class="content-heading">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
-						<!-- <h1 class="heading">SCT Time Stamp</h1> -->
-					</div>
-				</div>
-			</div>
-		</div>
-
+				<li>
+				<a class="waves-attach" href="sign.html">Sign In/Out</a>
+			</li>
+		</ul>
+		<hr>
+		<ul class="nav">
+		<li>
+		<a class="waves-attach" href="history.html">History</a>
+	</li>
+	<li>
+	<a class="waves-attach" href="list-profile.html">Profile List</a>
+</li>
+<li>
+<a class="waves-attach" href="holiday.html">Holiday</a>
+<span class="menu-collapse-toggle collapsed" data-target="#calendar-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+<ul class="menu-collapse collapse" id="calendar-elements">
+<li>
+<a class="waves-attach" href="holiday.html">Holiday List</a>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul class="nav">
+<li>
+<a class="waves-attach" href="report.html">Report</a>
+</li>
+<li>
+<a class="waves-attach" href="list-profile.html">Profile</a>
+<span class="menu-collapse-toggle collapsed" data-target="#profile-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+<ul class="menu-collapse collapse" id="profile-elements">
+<li>
+<a ng-if="'ROLE_ADMIN' === ur.role" class="waves-attach" href="create-profile.html">Crate Profile</a>
+</li>
+<li>
+<a class="waves-attach" href="list-profile.html">Search</a>
+</li>
+</ul>
+</li>
+</ul>
+-->
+<hr>
+</div>
+</div>
+</nav>
+<!--
+<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
+<div class="menu-scroll">
+<div class="menu-top">
+<div class="menu-top-img">
+<img alt="John Smith" src="css/images/samples/landscape.jpg" />
+</div>
+<div class="menu-top-info">
+<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="NY" src="avatar/{{ ur.gid }}.png"></span>{{ ur.name }}</a>
+</div>
+<div class="menu-top-info-sub">
+<small>Some additional information about {{ ur.name }}</small>
+</div>
+</div>
+<div class="menu-content">
+<ul class="nav">
+<li>
+<a class="waves-attach" href="/SCTTimestamp/edit-profile.html?gid={{ ur.gid }}"><span class="icon icon-lg">account_box</span>Profile Settings</a>
+</li>
+<li>
+<a class="waves-attach" href="password.html"><span class="icon icon-lg">https</span>Change Password</a>
+</li>
+<li>
+<a class="waves-attach" href="history.html"><span class="icon icon-lg">add_to_photos</span>History</a>
+</li>
+<li>
+<a class="waves-attach" href="logout"><span class="icon icon-lg">exit_to_app</span>Logout</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+-->
+<div class="content">
+	<div class="content-heading">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-10 col-lg-push-1 col-sm-10 col-sm-push-1">
-					<section class="content-inner">
-						<div class="row">
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 1</p>
-											<p class="margin-bottom-lg">
-												Summary of Provisional Contract Price  for General contractor
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form1-list.html"><span class="text-blue">View</span></a>
-
-												<a class="btn btn-flat waves-attach waves-effect" href="form1.html"><span class="text-blue">Create</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 2</p>
-											<p class="margin-bottom-lg">
-												Summary of Provisional Contract Price
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form2.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 3</p>
-											<p class="margin-bottom-lg">
-												Break-down Schedule of Direct Cost
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form3.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 4</p>
-											<p class="margin-bottom-lg">
-												Summary of Labor Cost
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form4.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 5</p>
-											<p class="margin-bottom-lg">
-												Summary of Construction Equipment Cost
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form5.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 6</p>
-											<p class="margin-bottom-lg">
-												Summary of Consumable Material and Tools Cost
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form6.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 7</p>
-											<p class="margin-bottom-lg">
-												Summary of Temporary Facilities
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form7.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 8</p>
-											<p class="margin-bottom-lg">
-												Summary of General Field Expenses
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form8.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 9</p>
-											<p class="margin-bottom-lg">
-												Summary of HSE (Health, Safety, Environment)
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form9.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 10</p>
-											<p class="margin-bottom-lg">
-												Summary of Insurance
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form10.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="card">
-									<aside class="card-side card-side-img pull-left">
-										<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
-									</aside>
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">Form 11</p>
-											<p class="margin-bottom-lg">
-												Summary of Tax & Duties
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-right">
-												<a class="btn btn-flat waves-attach waves-effect" href="form11.html"><span class="text-blue">GO</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-						</section>
-					</div>
+				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+					<!-- <h1 class="heading">SCT Time Stamp</h1> -->
 				</div>
 			</div>
-
 		</div>
-		<footer class="footer">
-			<div class="container">
-				<p>Made with ❤  by Raiwin Maintenance and service.,co led</p>
-				<p>Copyright © <script language="JavaScript"> var d = new Date(); yr = d.getFullYear(); document.write(yr); </script></p>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-push-1 col-sm-10 col-sm-push-1">
+				<section class="content-inner">
+					<div class="row">
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 1</p>
+										<p class="margin-bottom-lg">
+											Summary of Provisional Contract Price  for General contractor
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form1-list.html"><span class="text-blue">View</span></a>
+
+											<a class="btn btn-flat waves-attach waves-effect" href="form1.html"><span class="text-blue">Create</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 2</p>
+										<p class="margin-bottom-lg">
+											Summary of Provisional Contract Price
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form2.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 3</p>
+										<p class="margin-bottom-lg">
+											Break-down Schedule of Direct Cost
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form3.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 4</p>
+										<p class="margin-bottom-lg">
+											Summary of Labor Cost
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form4.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 5</p>
+										<p class="margin-bottom-lg">
+											Summary of Construction Equipment Cost
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form5.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 6</p>
+										<p class="margin-bottom-lg">
+											Summary of Consumable Material and Tools Cost
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form6.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 7</p>
+										<p class="margin-bottom-lg">
+											Summary of Temporary Facilities
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form7.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 8</p>
+										<p class="margin-bottom-lg">
+											Summary of General Field Expenses
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form8.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 9</p>
+										<p class="margin-bottom-lg">
+											Summary of HSE (Health, Safety, Environment)
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form9.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 10</p>
+										<p class="margin-bottom-lg">
+											Summary of Insurance
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form10.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6">
+							<div class="card">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="alt text" class="img-cardx" src="css/images/samples/singin.jpg">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Form 11</p>
+										<p class="margin-bottom-lg">
+											Summary of Tax & Duties
+										</p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-right">
+											<a class="btn btn-flat waves-attach waves-effect" href="form11.html"><span class="text-blue">GO</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</section>
 			</div>
-		</footer>
+		</div>
+	</div>
 
-		<!-- js -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/base.min.js"></script>
+</div>
+<footer class="footer">
+	<div class="container">
+		<p>Made with ❤  by Raiwin Maintenance and service.,co led</p>
+		<p>Copyright © <script language="JavaScript"> var d = new Date(); yr = d.getFullYear(); document.write(yr); </script></p>
+	</div>
+</footer>
 
-		<!-- js for this project -->
-		<script src="js/project.min.js"></script>
-		<script src='js/angular.min.js'></script>
-		<script src='js/user.js'></script>
+<!-- js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/base.min.js"></script>
 
-	</body>
-	</html>
+<!-- js for this project -->
+<script src="js/project.min.js"></script>
+<script src='js/angular.min.js'></script>
+<script src='js/user.js'></script>
+
+</body>
+</html>
