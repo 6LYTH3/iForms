@@ -1,6 +1,6 @@
-var app = angular.module('form1', []);
+var app = angular.module('form2', []);
 
-app.controller('form1Ctrl', ['$scope', '$http',  function($scope, $http) {
+app.controller('form2Ctrl', ['$scope', '$http',  function($scope, $http) {
   var Form_ID = '';
 
   $scope.getFormId = function() {
@@ -8,14 +8,14 @@ app.controller('form1Ctrl', ['$scope', '$http',  function($scope, $http) {
   };
 
   $scope.showalldoc = function() {
-    $http.get('/iforms/showAllMaster?type=GENCONTR').
+    $http.get('/iforms/showAllMaster?type=CONTRACT').
     success(function(data) {
       $scope.docs = data;
     });
   };
 
   $scope.showdoc = function(formId) {
-    window.location = '/iforms/form1-detail.html?formId=' + formId;
+    window.location = '/iforms/form2-detail.html?formId=' + formId;
   };
 
   $scope.showmasterdoc = function() {
@@ -26,38 +26,17 @@ app.controller('form1Ctrl', ['$scope', '$http',  function($scope, $http) {
   };
 
   $scope.showsection = function(topic) {
-    $http.get('/iforms/getGenernalConFormIdAndTopic?formId=' + Form_ID + '&topic=' + topic).
+    $http.get('/iforms/getContractPriceFormIdAndTopic?formId=' + Form_ID + '&topic=' + topic).
     success(function(data) {
       switch (topic) {
-        case 'COMMON TEMPORARY FACILITY WORK':
-        $scope.common = data;
+        case 'DIRECT MATERIALS':
+        $scope.materials = data;
         break;
-        case 'CIVIL WORK':
-        $scope.civil = data;
+        case 'DIRECT LABOUR':
+        $scope.labour = data;
         break;
-        case 'ARCHITECTURE WORK':
-        $scope.archi = data;
-        break;
-        case 'STEEL STRUCTURE WORK':
-        $scope.steel = data;
-        break;
-        case 'PIPING WORK':
-        $scope.piping = data;
-        break;
-        case 'PAINTING WORK':
-        $scope.painting = data;
-        break;
-        case 'INSULATION WORK':
-        $scope.insulation = data;
-        break;
-        case 'EQUIPMENT INSTALLATION WORK':
-        $scope.equip = data;
-        break;
-        case 'ELECTRICAL WORK':
-        $scope.elec = data;
-        break;
-        case 'INSTRUMENT WORK':
-        $scope.instrument = data;
+        case 'CONSTRUCTION EQUIPMENT':
+        $scope.equipment = data;
         break;
         case 'INDIRECT LABOR':
         $scope.indirect = data;

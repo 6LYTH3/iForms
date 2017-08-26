@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 //EN">
-<html lang="en" ng-app="user">
+<html lang="en" ng-app="form2">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta charset="UTF-8">
@@ -23,7 +23,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="avoid-fout" ng-controller="userCtrl" ng-init="currentuser()">
+<body class="avoid-fout" ng-controller="form2Ctrl" ng-init="getFormId()">
   <div class="avoid-fout-indicator avoid-fout-indicator-fixed">
     <div class="progress-circular progress-circular-alt progress-circular-center">
       <div class="progress-circular-wrapper">
@@ -153,12 +153,10 @@
     </div>
   </div>
 
-  <form method="POST" action="createContractPrice" enctype="multipart/form-data">
-
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-lg-push-3 col-sm-12 col-sm-push-1">
-          <section class="content-inner">
+          <section class="content-inner" ng-init="showmasterdoc()">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -167,7 +165,7 @@
                       <label class="form-label" for="input-projectName">Project Name</label>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-8">
-                      <input class="form-control form-control-inline" id="input-projectName" name="projectName" placeholder="PTT WangNoi Project" type="text" required="required" autofocus="autofocus">
+                      <input class="form-control form-control-inline" id="input-projectName" name="projectName" value="{{ master.projectName }}" placeholder="PTT WangNoi Project" type="text" required="required" autofocus="autofocus">
                     </div>
                   </div>
                   <div class="form-group">
@@ -176,7 +174,7 @@
                         <label class="form-label" for="input-jobno">Job No</label>
                       </div>
                       <div class="col-lg-4 col-md-6 col-sm-8">
-                        <input class="form-control form-control-inline" id="input-jobno" name="jobno" placeholder="AB-1234" type="text" required="required">
+                        <input class="form-control form-control-inline" id="input-jobno" name="jobno" value="{{ master.jobno }}" placeholder="AB-1234" type="text" required="required">
                       </div>
                     </div>
                   </div>
@@ -190,7 +188,7 @@
                       <label class="form-label" for="input-docnum">Document No</label>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-8">
-                      <input class="form-control form-control-inline" id="input-docnum" name="docnum" placeholder="01_AA_BB" type="text" required="required">
+                      <input class="form-control form-control-inline" id="input-docnum" name="docnum" value="{{ master.docnum }}" placeholder="01_AA_BB" type="text" required="required">
                     </div>
                   </div>
                 </div>
@@ -201,7 +199,7 @@
                       <label class="form-label" for="input-rev">Rev</label>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-8">
-                      <input class="form-control form-control-inline" id="input-rev" name="rev" placeholder="0" type="number" min="0" required="required">
+                      <input class="form-control form-control-inline" id="input-rev" name="rev" value="{{ master.rev }}" placeholder="0" type="number" min="0" required="required">
                     </div>
                   </div>
                 </div>
@@ -212,7 +210,7 @@
                       <label class="form-label" for="input-date">Date</label>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-8">
-                      <input class="form-control form-control-inline" id="input-date" name="date" placeholder="0" type="text" required="required">
+                      <input class="form-control form-control-inline" id="input-date" name="date" value="{{ master.date | date:'medium'}}" placeholder="0" type="text" required="required">
                     </div>
                   </div>
                 </div>
@@ -230,52 +228,52 @@
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('DIRECT MATERIALS')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">DIRECT MATERIALS (INCLUDING TRANSPORTATION)</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fd1-m">Amount</label>
-            <input class="form-control" id="float-fd1-m" name="fd1m" value="0" type="number">
+            <input class="form-control" id="float-fd1-m" name="fd1m" value="{{ materials.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fd1-r">Remarks</label>
-            <input class="form-control" id="float-fd1-r" name="fd1r" value=" " type="text">
+            <input class="form-control" id="float-fd1-r" name="fd1r" value="{{ materials.remark }}" type="text">
           </div>
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('DIRECT LABOUR')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">DIRECT LABOUR</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fd2-m">Amount</label>
-            <input class="form-control" id="float-fd2-m" name="fd2m" value="0" type="number">
+            <input class="form-control" id="float-fd2-m" name="fd2m" value="{{ labour.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fd2-r">Remarks</label>
-            <input class="form-control" id="float-fd2-r" name="fd2r" value=" " type="text">
+            <input class="form-control" id="float-fd2-r" name="fd2r" value="{{ labour.remark }}" type="text">
           </div>
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('CONSTRUCTION EQUIPMENT')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">CONSTRUCTION EQUIPMENT</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fd3-m">Amount</label>
-            <input class="form-control" id="float-fd3-m" name="fd3m" value="0" type="number">
+            <input class="form-control" id="float-fd3-m" name="fd3m" value="{{ equipment.amount }}" type="number">
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fd3-r">Remarks</label>
-            <input class="form-control" id="float-fd3-r" name="fd3r" value=" " type="text">
+            <input class="form-control" id="float-fd3-r" name="fd3r" value="{{ equipment.remark }}" type="text">
           </div>
         </div>
       </div>
@@ -299,122 +297,122 @@
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('INDIRECT LABOR')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">INDIRECT LABOR</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fd1-m">Amount</label>
-            <input class="form-control" id="float-fi1-m" name="fi1m" value="0" type="number">
+            <input class="form-control" id="float-fi1-m" name="fi1m" value="{{ indirect.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fd1-r">Remarks</label>
-            <input class="form-control" id="float-fi1-r" name="fi1r" value=" " type="text">
+            <input class="form-control" id="float-fi1-r" name="fi1r" value="{{ indirect.remark }}" type="text">
           </div>
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('TEMPORARY FACILITIES')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">TEMPORARY FACILITIES</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi2-m">Amount</label>
-            <input class="form-control" id="float-fi2-m" name="fi2m" value="0" type="number">
+            <input class="form-control" id="float-fi2-m" name="fi2m" value="{{ temp.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi2-r">Remarks</label>
-            <input class="form-control" id="float-fi2-r" name="fi2r" value=" " type="text">
+            <input class="form-control" id="float-fi2-r" name="fi2r" value="{{ temp.remark }}" type="text">
           </div>
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('GENERAL FIELD EXPENSES')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">GENERAL FIELD EXPENSES</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi3-m">Amount</label>
-            <input class="form-control" id="float-fi3-m" name="fi3m" value="0" type="number">
+            <input class="form-control" id="float-fi3-m" name="fi3m" value="{{ general.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi3-r">Remarks</label>
-            <input class="form-control" id="float-fi3-r" name="fi3r" value=" " type="text">
+            <input class="form-control" id="float-fi3-r" name="fi3r" value="{{ general.remark }}" type="text">
           </div>
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('INSURANCE')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">INSURANCE</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi4-m">Amount</label>
-            <input class="form-control" id="float-fi4-m" name="fi4m" value="0" type="number">
+            <input class="form-control" id="float-fi4-m" name="fi4m" value="{{ insurance.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi4-r">Remarks</label>
-            <input class="form-control" id="float-fi4-r" name="fi4r" value=" " type="text">
+            <input class="form-control" id="float-fi4-r" name="fi4r" value="{{ insurance.remark }}" type="text">
           </div>
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('HSE')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">HSE (HEALTH, SAFETY, ENVIRONMENT)</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi5-m">Amount</label>
-            <input class="form-control" id="float-fi5-m" name="fi5m" value="0" type="number">
+            <input class="form-control" id="float-fi5-m" name="fi5m" value="{{ hse.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi5-r">Remarks</label>
-            <input class="form-control" id="float-fi5-r" name="fi5r" value=" " type="text">
+            <input class="form-control" id="float-fi5-r" name="fi5r" value="{{ hse.remark }}" type="text">
           </div>
         </div>
       </div>
 
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('PROFIT')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">OVERHEAD & PROFIT</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi6-m">Amount</label>
-            <input class="form-control" id="float-fi6-m" name="fi6m" value="0" type="number">
+            <input class="form-control" id="float-fi6-m" name="fi6m" value="{{ profit.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi6-r">Remarks</label>
-            <input class="form-control" id="float-fi6-r" name="fi6r" value=" " type="text">
+            <input class="form-control" id="float-fi6-r" name="fi6r" value="{{ profit.remark }}" type="text">
           </div>
         </div>
       </div>
 
-      <div class="form-group form-group-label">
+      <div class="form-group form-group-label" ng-init="showsection('TAX')">
         <div class="row">
           <div class="col-sm-3">
             <label class="form-label">TAX & DUTIES (V.A.T EXCLUDED)</label>
           </div>
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi7-m">Amount</label>
-            <input class="form-control" id="float-fi7-m" name="fi7m" value="0" type="number">
+            <input class="form-control" id="float-fi7-m" name="fi7m" value="{{ tax.amount }}" type="number">
           </div>
 
           <div class="col-lg-4 col-sm-4">
             <label class="floating-label" for="float-fi7-r">Remarks</label>
-            <input class="form-control" id="float-fi7-r" name="fi7r" value=" " type="text">
+            <input class="form-control" id="float-fi7-r" name="fi7r" value="{{ tax.remark }}" type="text">
           </div>
         </div>
       </div>
@@ -441,14 +439,9 @@
             <input class="form-control" id="float-fdt-m" value="123" type="text" disabled>
           </div>
 
-          <div class="col-lg-1 col-sm-1">
-            <button class="btn btn-blue waves-attach waves-button waves-light waves-effect" type="submit">Submit</button>
-          </div>
-
         </div>
       </div>
     </section>
-  </form>
 </div>
 
 <footer class="footer">
@@ -466,6 +459,6 @@
 <script src="js/project.min.js"></script>
 <script src='js/angular.min.js'></script>
 <script src='js/user.js'></script>
-
+<script src='js/form2.js'></script>
 </body>
 </html>
